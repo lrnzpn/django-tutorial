@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+
+<!-- create form -->
+{% block title %} Create New List {%endblock%}
+
+{% block content %} 
+<h3>Create Page</h3>
+
+<!-- form object to generate fields -->
+<form method="post" actions='/create/' class='form-group'>
+    {% csrf_token %} <!-- security validation-->
+    <div class="input-group mb-3">
+        <!--{{ form.as_p }} vertical -->
+        <div class="input-group-prepend">
+            <button type="submit" name="save" class='btn btn-success'>Create New</button>
+        </div>
+        
+        {{form.name}}
+    </div>
+    
+</form>
+
+{%endblock%}
